@@ -12,14 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: repository
       - uses: actions/setup-node@v4
       - run: |
-          npm install-clean &&
+          npm install-clean
           composer install --ignore-platform-reqs
 
       - run: |
           wget --no-verbose https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar
-          php phpDocumentor.phar -d . -t docs
+          php phpDocumentor.phar -d repository -t docs
           mkdir docs/swagger
 
       - run: |
