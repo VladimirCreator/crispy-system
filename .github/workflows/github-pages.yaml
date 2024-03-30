@@ -18,7 +18,7 @@ jobs:
           composer install --ignore-platform-reqs
 
       - run: |
-          wget https://github.com/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar &&
+          wget https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar &&
           php phpDocumentor.phar -d . -t docs
           mkdir docs/swagger
 
