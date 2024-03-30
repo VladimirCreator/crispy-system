@@ -20,7 +20,7 @@ jobs:
       - run: |
           wget --no-verbose https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar
           php phpDocumentor.phar "-d . -t docs"
-          mkdir docs/swagger
+          mkdir --parents docs/swagger
 
       - run: |
           ./vendor/bin/openapi . -o openapi.yaml
