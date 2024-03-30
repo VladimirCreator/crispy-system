@@ -22,7 +22,7 @@ class NotebookController extends Controller {
 	#[
 		OA\Response(
 			response: 200,
-			descriptionn: 'Get a list of notebooks. A response contains a list of notebooks.'
+			description: 'Get a list of notebooks. A response contains a list of notebooks.'
 		)
 	]
 	public function index() {
@@ -36,7 +36,7 @@ class NotebookController extends Controller {
 	#[
 		OA\Response(
 			response: 200,
-			descriptionn: 'Get information about a notebook. A response contains a list of notebooks.'
+			description: 'Get information about a notebook. A response contains a list of notebooks.'
 		)
 	]
 	public function read(string $id) {
@@ -50,7 +50,7 @@ class NotebookController extends Controller {
 	#[
 		OA\Response(
 			response: 200,
-			descriptionn: 'Create a new notebook. A response contains a list of notebooks.'
+			description: 'Create a new notebook. A response contains a list of notebooks.'
 		)
 	]
 	public function create(Request $request, Notebook $notebook) {
@@ -78,7 +78,7 @@ class NotebookController extends Controller {
 	#[
 		OA\Response(
 			response: 200,
-			descriptionn: 'Delete notebook with specified id. A response contains a deleted notebook.'
+			description: 'Delete notebook with specified id. A response contains a deleted notebook.'
 		)
 	]
 	public function delete(Notebook $notebook, string $id) {
@@ -96,7 +96,7 @@ class NotebookController extends Controller {
 	#[
 		OA\Response(
 			response: 200,
-			descriptionn: 'Update a notebook. A response contains a modified notebook.'
+			description: 'Update a notebook. A response contains a modified notebook.'
 		)
 	]
 	public function update(Request $request, Notebook $notebook, string $id) {
