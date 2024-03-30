@@ -20,5 +20,7 @@ jobs:
           cp .env.interface .env
           php artisan storage:link
           php artisan key:generate
-          php artisan test
+          ./vendor/bin/sail up -d
+          ./vendor/bin/sail artisan test
+          ./vendor/bin/sail down
     name: artisan test
