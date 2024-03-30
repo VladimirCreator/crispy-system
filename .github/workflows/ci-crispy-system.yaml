@@ -17,10 +17,8 @@ jobs:
           composer install --ignore-platform-reqs
 
       - run: |
-          cp .env.interface .env
+          cp .env.testing .env
           php artisan storage:link
           php artisan key:generate
-          ./vendor/bin/sail up -d
-          ./vendor/bin/sail artisan test
-          ./vendor/bin/sail down
+          php artisan test
     name: artisan test

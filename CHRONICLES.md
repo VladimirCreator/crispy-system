@@ -20,7 +20,7 @@
 1. 6:07 PM Create /.github/workflows/dockerfile.yaml file.
 1. 7:35 PM Execute `npm install --save-dev @redocly/cli` script.
 
-## ## Fri 29
+## Fri 29
 
 1. 2:37 AM Create /app/Contracts/ folder.
 1. 2:37 AM Create /app/Contracts/NotebookRepository.php file.
@@ -30,3 +30,7 @@
 1. 6:00 AM Create /REQUEST.md file.
 1. false 4:39 PM Execute `composer require --dev spatie/phpunit-watcher` script.
 1. 8:16 PM Finish v0.1.0.
+
+## Sun 31
+
+1. 2:28 AM Create /.env.testing file.
