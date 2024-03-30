@@ -23,7 +23,7 @@ jobs:
           mkdir --parents docs/swagger
 
       - run: |
-          ./vendor/bin/openapi . -o openapi.yaml
+          ./vendor/bin/openapi -l -e ./vendor . -o openapi.yaml
           npx @redocly/cli build-docs openapi.yaml
           mv redoc-static.html docs/swagger/index.html
 

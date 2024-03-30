@@ -17,42 +17,42 @@ class NotebookController extends Controller {
 
 	/**
 	 *
+	 * @OA\Get(
+	 * path = "/api/v1/notebook/",
+	 * @OA\Response(
+	 *		 response = "200",
+	 *		 description = "Get a list of notebooks. A response contains a list of notebooks."
+	 * )
+	 * )
 	 */
-	#[OA\Get(path: 'api/v1/notebook/')]
-	#[
-		OA\Response(
-			response: 200,
-			description: 'Get a list of notebooks. A response contains a list of notebooks.'
-		)
-	]
 	public function index() {
 		return $this->repository->findAll();
 	}
 
 	/**
 	 *
+	 * @OA\Get(
+	 * path = "api/v1/notebook/{id}",
+	 * @OA\Response(
+	 *		 response = "200",
+	 *		 description = "Get information about a notebook. A response contains a notebook."
+	 * )
+	 * )
 	 */
-	#[OA\Get(path: 'api/v1/notebook/{id}')]
-	#[
-		OA\Response(
-			response: 200,
-			description: 'Get information about a notebook. A response contains a list of notebooks.'
-		)
-	]
 	public function read(string $id) {
 		return $this->repository->find($id);
 	}
 
 	/**
 	 *
+	 * @OA\Post(
+	 * path = "api/v1/notebook/",
+	 * @OA\Response(
+	 *		 response = "200",
+	 *		 description = "Create a new notebook. A response contains a list of notebooks."
+	 * )
+	 * )
 	 */
-	#[OA\Post(path: 'api/v1/notebook/')]
-	#[
-		OA\Response(
-			response: 200,
-			description: 'Create a new notebook. A response contains a list of notebooks.'
-		)
-	]
 	public function create(Request $request, Notebook $notebook) {
 		$request->validate([
 			'name' => 'required',
@@ -73,14 +73,14 @@ class NotebookController extends Controller {
 
 	/**
 	 *
+	 * @OA\Delete(
+	 * path = "api/v1/notebook/{id}",
+	 * @OA\Response(
+	 *		 response = "200",
+	 *		 description = "Delete notebook with specified id. A response contains a deleted notebook."
+	 * )
+	 * )
 	 */
-	#[OA\Delete(path: 'api/v1/notebook/{id}')]
-	#[
-		OA\Response(
-			response: 200,
-			description: 'Delete notebook with specified id. A response contains a deleted notebook.'
-		)
-	]
 	public function delete(Notebook $notebook, string $id) {
 		$deletedNotebook = $notebook->find($id);
 		$copy = clone $deletedNotebook;
@@ -91,14 +91,14 @@ class NotebookController extends Controller {
 
 	/**
 	 *
+	 * @OA\Post(
+	 * path = "api/v1/notebook/{id}",
+	 * @OA\Response(
+	 *		 response = "200",
+	 *		 description = "Update a notebook. A response contains a modified notebook."
+	 * )
+	 * )
 	 */
-	#[OA\Post(path: 'api/v1/notebook/{id}')]
-	#[
-		OA\Response(
-			response: 200,
-			description: 'Update a notebook. A response contains a modified notebook.'
-		)
-	]
 	public function update(Request $request, Notebook $notebook, string $id) {
 		$updatedNotebook = $notebook->find($id);
 		$updatedNotebook->update($request->all());
