@@ -21,7 +21,7 @@ jobs:
 
       - run: |
           wget --no-verbose https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar
-          php phpDocumentor.phar -d repository -t docs
+          php phpDocumentor.phar "-d repository -t docs"
           mkdir ./repository/docs/swagger
         working-directory: ../
 
