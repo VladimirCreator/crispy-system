@@ -1,0 +1,16 @@
+image: gitpod/workspace-full:latest
+
+tasks:
+  - init: |
+      cp .env.interface .env &&
+      composer install
+      php artisan key:generate
+      php artisan storage:link
+      php artisan migrate
+      php artisan db:seed
+
+    command: |
+      php artisan serve
+
+  - init: |
+      npm install-clean
