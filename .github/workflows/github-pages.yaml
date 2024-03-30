@@ -18,13 +18,13 @@ jobs:
           composer install --ignore-platform-reqs
 
       - run: |
-          wget https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar &&
+          wget --no-verbose https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.4.3/phpDocumentor.phar
           php phpDocumentor.phar -d . -t docs
           mkdir docs/swagger
 
       - run: |
-          ./vendor/bin/openapi . -o openapi.yaml &&
-          npx @redocly/cli build-docs openapi.yaml &&
+          ./vendor/bin/openapi . -o openapi.yaml
+          npx @redocly/cli build-docs openapi.yaml
           mv redoc-static.html ./docs/swagger/index.html
 
       - uses: actions/upload-pages-artifact@v3
