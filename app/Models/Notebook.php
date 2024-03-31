@@ -18,7 +18,7 @@ class Notebook extends Model {
 	 */
 	protected $fillable = [
 		'name',
-		'organization',
+		'organization_id',
 		'tel',
 		'email',
 		'date_of_birth',
